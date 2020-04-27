@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Clean'){
             steps{
-                'mvn clean'
+                bat 'start cmd.exe /c C:\Program Files (x86)\Jenkins\workspace\maven_pipeline(12)\mybat.bat'
             }
         }
     }
