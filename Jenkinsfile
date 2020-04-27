@@ -22,6 +22,14 @@ pipeline {
         }
       }  
     }
+    stage('Deploy'){
+        steps
+      {
+        withMaven(maven : 'MAVEN_HOME') {
+            bat 'mvn deploy' 
+        }
+      }  
+    }
   }
 }
   
