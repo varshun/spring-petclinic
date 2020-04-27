@@ -1,12 +1,15 @@
-node ("windows") {
-  stage ('Build') {
-
-    git url: 'https://github.com/varshun/spring-petclinic'
-
-    withMaven(...) {
-
-      bat "mvn clean install"
-
-    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+pipeline {
+  agent any
+  
+  stages{
+    stage('Clean'){
+        steps
+      {
+        withMaven(maven : 'apache-maven-3.6.3') {
+            bat 'mvn clean' 
+        }
+      }  
+    }
   }
 }
+  
