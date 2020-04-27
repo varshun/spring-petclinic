@@ -10,6 +10,14 @@ pipeline {
         }
       }  
     }
+     stage('Test'){
+        steps
+      {
+        withMaven(maven : 'MAVEN_HOME') {
+            bat 'mvn test' 
+        }
+      }  
+    }
   }
 }
   
