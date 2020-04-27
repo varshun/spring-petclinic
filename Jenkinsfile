@@ -1,6 +1,10 @@
 pipeline {
   agent any
   
+  tools {
+            jdk "jdk1.8.0_251"
+        }
+  
   stages{
     stage('Clean'){
         steps
@@ -13,9 +17,6 @@ pipeline {
      stage('Test'){
         steps
       {
-        tools {
-                   jdk "JAVA_HOME"
-                }
         withMaven(maven : 'MAVEN_HOME') {
             bat 'mvn test' 
         }
