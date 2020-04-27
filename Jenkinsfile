@@ -14,7 +14,7 @@ pipeline {
         steps
       {
         tools {
-                   jdk "jdk"
+                   jdk "JAVA_HOME"
                 }
         withMaven(maven : 'MAVEN_HOME') {
             bat 'mvn test' 
