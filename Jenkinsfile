@@ -4,7 +4,7 @@ pipeline {
         stage('Clean'){
             steps{
                 bat 'echo %PATH%'
-                bat 'mvn clean'
+                bat 'maven clean'
             }
         }
     }
