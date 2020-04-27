@@ -1,10 +1,10 @@
-pipeline {
+0pipeline {
     agent any
     stages{
         stage('Clean'){
             steps{
                 bat 'echo %PATH%'
-                bat 'maven clean'
+                bat 'mvn clean'
             }
         }
     }
